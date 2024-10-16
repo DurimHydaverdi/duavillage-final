@@ -1,7 +1,7 @@
 .h1-v {
   text-align: center;
   font-size: 3em;
-  margin-top: 180px;
+  margin-top: 130px;
   color: #00695c;
 }
 
@@ -91,7 +91,7 @@
       border: none;
       border-radius: 5px;
       padding: 10px 20px;
-      font-size: 1rem;
+      font-size: 0.9rem;
       cursor: pointer;
       transition: background-color 0.3s;
 
@@ -138,7 +138,7 @@
 @media (max-width: 480px) {
   .h1-v {
     font-size: 2em;
-    margin-top: 130px;
+    margin-top: 100px;
   }
 
   .villas {
@@ -171,7 +171,7 @@
       .book-now {
         height: 35px;
         width: 130px;
-        font-size: 0.9rem;
+        font-size: 0.7rem;
       }
     }
   }

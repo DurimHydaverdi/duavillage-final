@@ -1,0 +1,103 @@
+{
+  "welcome": "Mirë se vini në faqen tonë të internetit!",
+  "about": {
+    "title": "Malet e Gollakut",
+    "experience": "PËRVOJËN PARADISIN",
+    "description": "Malet e Gollakut janë një rajon që ndodhet në pjesën lindore të Kosovës, që mbulon pak më shumë se 15% të territorit të vendit. Gollak, si një rajon brenda Kosovës, përfshin më shumë se 120 fshatra, ndërsa jashtë saj ka mbi 30 fshatra. Harta e Kosovës ka katër rajone kryesore. Në veri është Kopaonik. Në perëndim janë Alpet Shqiptare. Në jug janë Malet e Sharrit. Në lindje ndodhet Gollaku.",
+    "video": {
+      "notSupported": "Shfletuesi juaj nuk mbështet etiketën e videos."
+    }
+  },
+  "villasLandingPage": {
+    "exploreOurVillas": "Eksploroni Vilat Tonë",
+    "rooms": "Dhoma",
+    "grillArea": "Zona e Grillit",
+    "balconyTerrace": "Ballkoni - Terasa",
+    "kitchen": "Kuzhina",
+    "exploreMore": "Eksploro Më Shumë"
+  },
+  "header": {
+    "home": "Kreu",
+    "about": "Rreth Nesh",
+    "amenities": "Përfitimet",
+    "contact": "Kontakti",
+    "bookNow": "Rezervo Tani"
+  },
+  "amenities": {
+    "title": "Shijoni. Çlodhuni. Relaksohuni.",
+    "wifi": "Wifi",
+    "parkingSpace": "Hapësira e Parkimit",
+    "shower": "Dush",
+    "waterFall": "Ujëvarë",
+    "trees": "Gjelbrim",
+    "tv": "TV 50 - INÇ"
+  },
+  "contact": {
+    "title": "Nehim në kontakt",
+    "subtitle": "Klikoni në hartë për të zbuluar lokacionin e saktë",
+    "fullName": "Emri i Plotë",
+    "email": "Email",
+    "phone": "Telefoni",
+    "message": "Mesazhi",
+    "sendMessage": "Dërgo Mesazhin",
+    "errors": {
+      "name": "Emri i Plotë duhet të përmbajë 3 ose më shumë shkronja.",
+      "phone": "Numri i telefonit duhet të përmbajë vetëm numra, +, *, dhe -.",
+      "message": "Mesazhi duhet të përmbajë 5 ose më shumë shkronja."
+    },
+    "modal": {
+      "success": "Mesazhi u dërgua me sukses!",
+      "unexpectedResponse": "Formati i papritur i përgjigjes.",
+      "error": "Ndodhi një gabim: {{error}}"
+    }
+  },
+  "footer": {
+    "contacts": "Kontaktet",
+    "phone": "+38349100019",
+    "email": "duavillage1@gmail.com",
+    "address": "Prishtinë, Keçekollë - Dua Village",
+    "socialMedia": "Mediat Sociale",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "tiktok": "Tiktok",
+    "copyright": "&copy; 2024 Dua Village Private Resort. Të drejtat e rezervuara."
+  },
+  "villas": {
+    "chooseYourVilla": "Zgjidhni Vilën Tuaj",
+    "bookNow": "Rezervo Tani",
+    "villa1": {
+      "description": "<strong>Rreth këtij vendi</strong><br /><br />Relaksohu me tërë familjen në këtë vend të qetë për të qëndruar.<br /><br /><strong>Hapësira</strong><br />Vila e madhe, moderne dhe e rehatshme, me pamje nga skylini i Prishtinës.<br />E qetë por në qendër me blerje 24-orëshe afër dhe qasje në transportin publik brenda 3 minutave në këmbë.<br />Vila gjithashtu përfshin një krevat për foshnjat dhe një TV Smart për netët e qeta!"
+    },
+    "villa2": {
+      "description": "Përshkrimi për Villën 2"
+    },
+    "villa3": {
+      "description": "Përshkrimi për Villën 3"
+    },
+    "villa4": {
+      "description": "Përshkrimi për Villën 4"
+    },
+    "villa5": {
+      "description": "Përshkrimi për Villën 5"
+    },
+    "villa6": {
+      "description": "Përshkrimi për Villën 6"
+    }
+  },
+  "villaDetail": {
+    "contactUsWhatsApp": "Na kontaktoni në WhatsApp",
+    "freeWifi": "Wifi falas",
+    "freeParking": "Parkim falas në vend",
+    "balcony": "Balkon",
+    "privateBathroom": "Banjo private",
+    "tv50Inch": "TV 50 - Inch",
+    "rooms": "Dhoma",
+    "shower": "Dush",
+    "kitchen": "Kuzhina",
+    "washingMachine": "Lavatrice",
+    "livingRoom": "Sallon",
+    "toilets": "Tualete",
+    "location": "Prishtinë, Keçekollë - Dua Village",
+    "contact": "Kontakto"
+  }
+}

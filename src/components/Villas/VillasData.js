@@ -13,48 +13,39 @@ import p8 from '../Assets/p8.jpg';
 const VillasData = [
   {
     id: 1,
-    images: [p1, p2, p3, p4, p4, p5, p6, p7, p8], // Add multiple images for each villa
+    images: [p1, p2, p3, p4, p4, p5, p6, p7, p8],
     title: 'Villa 1',
-    description: (
-      <>
-        <strong>About this space</strong><br /><br />
-        Relax with the whole family at this peaceful place to stay.<br /><br />
-        <strong>The space</strong><br />
-        Large, modern and comfy villa, with view of the Prishtina skyline.<br />
-        Quiet but central with 24-hour shopping nearby and access to public transport within 3 minutes walking distance.<br />
-        Villa also includes a baby bed for the little ones and a Smart TV for quiet nights in!
-      </>
-    ),
+    descriptionKey: 'villas.villa1.description', // Use translation key
   },
   {
     id: 2,
     images: [p1, p2, p3, p4, p4, p5, p6, p7, p8],
     title: 'Villa 2',
-    description: 'Description for Villa 2',
+    descriptionKey: 'villas.villa2.description', // Use translation key
   },
   {
     id: 3,
     images: [p1, p2, p3, p4, p4, p5, p6, p7, p8],
     title: 'Villa 3',
-    description: 'Description for Villa 3',
+    descriptionKey: 'villas.villa3.description', // Use translation key
   },
   {
     id: 4,
-    images: [p1, p2, p3, p4, p4, p5, p6, p7, p8], // Add multiple images for each villa
+    images: [p1, p2, p3, p4, p4, p5, p6, p7, p8],
     title: 'Villa 4',
-    description: 'Description for Villa 4',
+    descriptionKey: 'villas.villa4.description', // Use translation key
   },
   {
     id: 5,
-    images: [p1, p2, p3, p4, p4, p5, p6, p7, p8], // Add multiple images for each villa
+    images: [p1, p2, p3, p4, p4, p5, p6, p7, p8],
     title: 'Villa 5',
-    description: 'Description for Villa 5',
+    descriptionKey: 'villas.villa5.description', // Use translation key
   },
   {
     id: 6,
-    images: [p1, p2, p3, p4, p4, p5, p6, p7, p8], // Add multiple images for each villa
+    images: [p1, p2, p3, p4, p4, p5, p6, p7, p8],
     title: 'Villa 6',
-    description: 'Description for Villa 6',
+    descriptionKey: 'villas.villa6.description', // Use translation key
   },
   // Add more villas as needed
 ];

@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import './Contact.scss';
 import maps from '../Assets/maps.jpeg';
 import Modal from '../Modal/Modal';
+import { useTranslation } from 'react-i18next';
 
 const Contact = () => {
+  const { t } = useTranslation();
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -33,29 +36,24 @@ const Contact = () => {
       message: '',
     };
 
-    // Function to count letters, ignoring non-letter characters
     const countLetters = (str) => {
       return (str.match(/[a-zA-Z]/g) || []).length;
     };
 
-    // Full name validation (must have at least 3 letters)
     if (countLetters(name) < 3) {
-      errors.name = 'Full Name should contain 3 or more letters.';
+      errors.name = t('contact.errors.name');
     }
 
-    // Phone number validation (must contain only numbers, +, *, -)
     if (!/^[\d+\-*]+$/.test(phone)) {
-      errors.phone = 'Phone number should only contain numbers, +, *, and -.';
+      errors.phone = t('contact.errors.phone');
     }
 
-    // Message validation (must have at least 5 letters)
     if (countLetters(message) < 5) {
-      errors.message = 'Message should contain 5 or more letters.';
+      errors.message = t('contact.errors.message');
     }
 
     setFormErrors(errors);
 
-    // Return false if there are any errors
     return !Object.values(errors).some(error => error);
   };
 
@@ -76,17 +74,17 @@ const Contact = () => {
     .then(response => response.json())
     .then(data => {
       if (data.message) {
-        setModalContent('Message sent successfully!');
+        setModalContent(t('contact.modal.success'));
         setIsModalOpen(true);
         setFormData({ name: '', email: '', phone: '', message: '' });
-        setFormErrors({ name: '', phone: '', message: '' }); // Clear errors
+        setFormErrors({ name: '', phone: '', message: '' });
       } else {
-        setModalContent('Unexpected response format.');
+        setModalContent(t('contact.modal.unexpectedResponse'));
         setIsModalOpen(true);
       }
     })
     .catch(error => {
-      setModalContent('An error occurred: ' + error.message);
+      setModalContent(t('contact.modal.error', { error: error.message }));
       setIsModalOpen(true);
     });
   };
@@ -97,8 +95,8 @@ const Contact = () => {
 
   return (
     <section className="contact" id="contact">
-      <h2>Get In Touch</h2>
-      <h3>Click the map to reveal the precise location</h3>
+      <h2>{t('contact.title')}</h2>
+      <h3>{t('contact.subtitle')}</h3>
       <div className="mapContainer">
         <a href='https://tinyurl.com/yc6pvx65' target="_blank" rel="noreferrer">
           <img src={maps} alt="maps" />
@@ -107,7 +105,7 @@ const Contact = () => {
           <input
             type="text"
             name="name"
-            placeholder="Full Name"
+            placeholder={t('contact.fullName')}
             value={formData.name}
             onChange={handleChange}
             required
@@ -117,7 +115,7 @@ const Contact = () => {
           <input
             type="email"
             name="email"
-            placeholder="Email"
+            placeholder={t('contact.email')}
             value={formData.email}
             onChange={handleChange}
             required
@@ -126,7 +124,7 @@ const Contact = () => {
           <input
             type="text"
             name="phone"
-            placeholder="Phone"
+            placeholder={t('contact.phone')}
             value={formData.phone}
             onChange={handleChange}
             required
@@ -135,18 +133,18 @@ const Contact = () => {
           
           <textarea
             name="message"
-            placeholder="Message"
+            placeholder={t('contact.message')}
             value={formData.message}
             onChange={handleChange}
             required
           ></textarea>
           {formErrors.message && <p className="error-message">{formErrors.message}</p>}
           
-          <button type="submit">Send Message</button>
+          <button type="submit">{t('contact.sendMessage')}</button>
         </form>
       </div>
 
-      <Modal isOpen={isModalOpen} onClose={closeModal} title="Notification">
+      <Modal isOpen={isModalOpen} onClose={closeModal} title={t('contact.modal.title')}>
         {modalContent}
       </Modal>
     </section>

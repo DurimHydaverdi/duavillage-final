@@ -1,0 +1,103 @@
+{
+  "welcome": "Welcome to our website!",
+  "about": {
+    "title": "Mountains of Gollak",
+    "experience": "EXPERIENCE THE PARADISE",
+    "description": "Mountains of Gollak is a region situated in the eastern part of Kosovo, covering just over 15% of the country's territory. Gollak, as a region within Kosovo, encompasses more than 120 villages, while outside of it there are over 30 villages. The map of Kosovo has four main regions. In the north is Kopaonik. To the west are the Albanian Alps. In the south is the Sharr Mountains. In the east lies Gollak.",
+    "video": {
+      "notSupported": "Your browser does not support the video tag."
+    }
+  },
+  "villasLandingPage": {
+    "exploreOurVillas": "Explore Our Villas",
+    "rooms": "Rooms",
+    "grillArea": "Grill Area",
+    "balconyTerrace": "Balcony - Terrace",
+    "kitchen": "Kitchen",
+    "exploreMore": "Explore More"
+  },
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "amenities": "Amenities",
+    "contact": "Contact",
+    "bookNow": "Book Now"
+  },
+  "amenities": {
+    "title": "Enjoy. Unwind. Relax.",
+    "wifi": "Wifi",
+    "parkingSpace": "Parking Space",
+    "shower": "Shower",
+    "waterFall": "Water Fall",
+    "trees": "Trees",
+    "tv": "50 - INCH TV"
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Click the map to reveal the precise location",
+    "fullName": "Full Name",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message",
+    "sendMessage": "Send Message",
+    "errors": {
+      "name": "Full Name should contain 3 or more letters.",
+      "phone": "Phone number should only contain numbers, +, *, and -.",
+      "message": "Message should contain 5 or more letters."
+    },
+    "modal": {
+      "success": "Message sent successfully!",
+      "unexpectedResponse": "Unexpected response format.",
+      "error": "An error occurred: {{error}}"
+    }
+  },
+  "footer": {
+    "contacts": "Contacts",
+    "phone": "+38349100019",
+    "email": "duavillage1@gmail.com",
+    "address": "Prishtinë, Keçekollë - Dua Village",
+    "socialMedia": "Social Media",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "tiktok": "Tiktok",
+    "copyright": "&copy; 2024 Dua Village Private Resort. All rights reserved."
+  },
+  "villas": {
+    "chooseYourVilla": "Choose Your Villa",
+    "bookNow": "Book Now",
+    "villa1": {
+      "description": "<strong>About this space</strong><br /><br />Relax with the whole family at this peaceful place to stay.<br /><br /><strong>The space</strong><br />Large, modern and comfy villa, with view of the Prishtina skyline.<br />Quiet but central with 24-hour shopping nearby and access to public transport within 3 minutes walking distance.<br />Villa also includes a baby bed for the little ones and a Smart TV for quiet nights in!"
+    },
+    "villa2": {
+      "description": "Description for Villa 2"
+    },
+    "villa3": {
+      "description": "Description for Villa 3"
+    },
+    "villa4": {
+      "description": "Description for Villa 4"
+    },
+    "villa5": {
+      "description": "Description for Villa 5"
+    },
+    "villa6": {
+      "description": "Description for Villa 6"
+    }
+  },
+  "villaDetail": {
+    "contactUsWhatsApp": "Contact us in WhatsApp",
+    "freeWifi": "Free Wifi",
+    "freeParking": "Free on-site parking",
+    "balcony": "Balcony",
+    "privateBathroom": "Private Bathroom",
+    "tv50Inch": "50 - Inch TV",
+    "rooms": "Rooms",
+    "shower": "Shower",
+    "kitchen": "Kitchen",
+    "washingMachine": "Washing machine",
+    "livingRoom": "Living room",
+    "toilets": "Toilets",
+    "location": "Prishtinë, Keçekollë - Dua Village",
+    "contact": "Contact"
+  }
+}

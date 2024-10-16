@@ -1,12 +1,14 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import VillasData from "./VillasData";
-import "./Villas.scss";
-import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
-import p3 from '../Assets/p3.jpg'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import VillasData from './VillasData';
+import './Villas.scss';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
+import p3 from '../Assets/p3.jpg';
+import { useTranslation } from 'react-i18next';
 
 const Villas = () => {
+  const { t } = useTranslation();
 
   const handleScrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -15,9 +17,9 @@ const Villas = () => {
   return (
     <div>
       <Header />
-      {/* <h1 className="h1-v">Choose Your Villa</h1> */}
       <img className='background' src={p3} alt='background' />
-      <h1 className="h1-v">Choose Your Villa</h1>
+      {/* Use t('villas.chooseYourVilla') for translation */}
+      <h1 className="h1-v">{t('villas.chooseYourVilla')}</h1>
       <section className="villas">
         {VillasData.map((villa) => (
           <Link
@@ -30,9 +32,12 @@ const Villas = () => {
             </div>
             <div className="villa-content">
               <h2>{villa.title}</h2>
-              <p>{villa.description}</p>
+              <p dangerouslySetInnerHTML={{ __html: t(villa.descriptionKey) }} /> {/* Render HTML */}
               <span></span>
-              <button className="book-now" onClick={handleScrollToTop}>BOOK NOW</button>
+              {/* Use t('villas.bookNow') for translation */}
+              <button className="book-now" onClick={handleScrollToTop}>
+                {t('villas.bookNow')}
+              </button>
             </div>
           </Link>
         ))}

@@ -5,8 +5,10 @@ import outside from '../Assets/outside.jpg';
 import p1 from '../Assets/p1.jpg';
 import collage from '../Assets/collage.jpeg';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const VillasLandingPage = () => {
+  const { t } = useTranslation();
 
   // Function to handle scrolling to the top
   const handleScrollToTop = () => {
@@ -16,15 +18,15 @@ const VillasLandingPage = () => {
   return (
     <div className="villas-landing-page">
       <div className="facilities-section">
-        <h2>Explore Our Villas</h2>
+        <h2>{t('villasLandingPage.exploreOurVillas')}</h2>
         <ul className="facilities-list">
-          <h2>Rooms</h2>
-          <h2 className="active">Grill Area</h2>
-          <h2>Balcony - Terrace</h2>
-          <h2>Kitchen</h2>
+          <h2>{t('villasLandingPage.rooms')}</h2>
+          <h2 className="active">{t('villasLandingPage.grillArea')}</h2>
+          <h2>{t('villasLandingPage.balconyTerrace')}</h2>
+          <h2>{t('villasLandingPage.kitchen')}</h2>
           <Link to="/villas">
             <button className='view-more' onClick={handleScrollToTop}>
-              Explore More
+              {t('villasLandingPage.exploreMore')}
             </button>
           </Link>
         </ul>

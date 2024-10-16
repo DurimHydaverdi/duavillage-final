@@ -39,3 +39,15 @@
       background-color: #004d40;
     }
   }
+
+  @media (max-width: 768px) {
+    .modal-content {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 500px;
+      width: 80%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+  }

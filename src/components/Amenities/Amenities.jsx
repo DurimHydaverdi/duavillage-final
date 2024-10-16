@@ -1,52 +1,40 @@
 import React from 'react';
 import './Amenities.scss'; // import SCSS file
-import { FaWifi } from "react-icons/fa";
-import { GiPoolTriangle } from "react-icons/gi";
-import { FaParking } from "react-icons/fa";
-import { FaShower } from "react-icons/fa6";
+import { FaWifi, FaParking, FaTv, FaShower } from "react-icons/fa";
 import { GiWaterfall } from "react-icons/gi";
 import { LuTrees } from "react-icons/lu";
-import { FaTv } from "react-icons/fa";
+import { useTranslation } from 'react-i18next';
 
 const Amenities = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="amenities" id="amenities">
-      <h2>Enjoy. Unwind. Relax.</h2>
+      <h2>{t('amenities.title')}</h2>
       <div className="amenitiesList">
         <div className="amenity">
-          <i className="fas fa-wifi"></i>
           <FaWifi className='fa-icon' />
-          <p>Wifi</p>
+          <p>{t('amenities.wifi')}</p>
         </div>
-        {/* <div className="amenity">
-          <i className="fas fa-swimming-pool"></i>
-          <GiPoolTriangle className='fa-icon' />
-          <p>Private Pool</p>
-        </div> */}
         <div className="amenity">
-          <i className="fas fa-parking"></i>
           <FaParking className='fa-icon' />
-          <p>Parking Space</p>
+          <p>{t('amenities.parkingSpace')}</p>
         </div>
         <div className="amenity">
-          <i className="fas fa-shower"></i>
           <FaShower className='fa-icon' />
-          <p>Shower</p>
+          <p>{t('amenities.shower')}</p>
         </div>
         <div className="amenity">
-          <i className="fas fa-water-fall"></i>
           <GiWaterfall className='fa-icon' />
-          <p>Water Fall</p>
+          <p>{t('amenities.waterFall')}</p>
         </div>
         <div className="amenity">
-          <i className="fas fa-lu-trees"></i>
           <LuTrees className='fa-icon' />
-          <p>Trees</p>
+          <p>{t('amenities.trees')}</p>
         </div>
         <div className="amenity">
-          <i className="fas fa-tv"></i>
           <FaTv className='fa-icon' />
-          <p>50 - INCH TV</p>
+          <p>{t('amenities.tv')}</p>
         </div>
       </div>
     </section>

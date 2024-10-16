@@ -1,63 +1,42 @@
 .header {
-  position: absolute;
+  position: fixed;
   top: 0;
+  margin-top: 0px;
   left: 0;
   width: 100%;
-  background-color: #00695c;
+  height: 120px;
+  z-index: 102;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
+  // padding: 3rem;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  background-color: transparent;
+  box-shadow: none;
+  -webkit-transition: height .75s cubic-bezier(.76,.09,.215,1);
+    transition: height .75s cubic-bezier(.76,.09,.215,1);
 
-  .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
+  .header-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
   }
 
   .logo_img {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    margin-left: 1vw;
-  }
-
-  .nav {
-    ul {
-      display: flex;
-      list-style: none;
-      padding: 1rem;
-
-      li {
-        margin: 0 15px;
-        cursor: pointer;
-
-        a {
-          text-decoration: none;
-          color: white;
-          &:hover {
-            text-decoration: underline;
-          }
-        }
-      }
-
-      .bookButton {
-        background: lightslategray;
-        color: #fff;
-        padding: 10px 20px;
-        border-radius: 5px;
-        &:hover {
-          background: lightslategray;
-        }
-      }
-    }
+    width: 170px;
+    height: 170px;
+    display: none;
   }
 
   .nav-toggle {
-    display: none;
+    display: flex;
     flex-direction: column;
     cursor: pointer;
-
+    z-index: 103;
+    margin-right: 100px;
+  
     .bar {
       width: 25px;
       height: 3px;
@@ -79,50 +58,141 @@
     }
   }
 
-  @media (max-width: 767px) { /* Mobile */
-    .nav {
-      position: absolute;
-      top: 18vw; /* Adjust based on header height */
-      right: 0;
-      background-color: #00695c;
-      width: 100%;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease-in-out;
-      z-index: 1000;
+  &.scrolled {
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 0px;
+    
+
+    .logo_img {
+      filter: invert(1);
       display: flex;
-      flex-direction: column; /* Stack items vertically */
-      align-items: center; /* Center align items horizontally */
+      margin-left: -90px;
+    }
 
-      &.open {
-        max-height: 300px;
-      }
-
-      ul {
-        flex-direction: column;
-        align-items: center;
-        margin-left: -25px;
-
-        li {
-          margin: 10px 0;
-        }
-
-        .bookButton {
-          width: 80%;
-          text-align: center;
-        }
-      }
+    .language-switcher {
+      filter: invert(1);
     }
 
     .nav-toggle {
-      display: flex;
-      margin-right: 50px;
+      margin-left: -50px;
+      margin-right: 53px;
     }
 
+    .bar {
+      background-color: black;
+    }
+  }
+}
+
+.fullscreen-menu {
+  position: fixed;
+  top: 0;
+  right: -100vw;
+  width: 30vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 101;
+  transition: right 0.5s ease;
+
+  ul {
+    list-style: none;
+    text-align: center;
+
+    li {
+      margin: 20px 0;
+
+      a {
+        font-size: 24px;
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s;
+        cursor: pointer;
+      }
+    }
+
+    .bookButton {
+      background: #00695c;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      display: inline-block;
+    }
+  
+  }
+
+  &.open {
+    right: 0;
+  }
+}
+
+
+@media (max-width: 767px) { /* Mobile */
+  .nav-toggle {
+    margin-right: 0; /* Remove margin on mobile */
+    margin-left: -550px; /* Keep this if you want to keep the left margin */
+  }
+
+  .nav {
+    position: absolute;
+    top: 18vw; /* Adjust based on header height */
+    right: 0;
+    background-color: #00695c;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align items horizontally */
+
+    &.open {
+      max-height: 300px;
+    }
+
+    ul {
+      flex-direction: column;
+      align-items: center;
+      margin-left: -25px;
+
+      li {
+        margin: 10px 0;
+      }
+
+      .bookButton {
+        width: 80%;
+        text-align: center;
+      }
+    }
+  }
+
+  .fullscreen-menu {
+    width: 100vw; /* Full width for mobile devices */
+  }
+
+  .logo_img {
+    display: none;
+  }
+}
+  
+    .nav-toggle {
+      display: flex;
+      margin-left: 250px;
+      // margin-right: -50px;
+    }
+  
     .logo {
       margin-right: auto;
     }
-  }
+
+    .logo_img {
+      display: none;
+    }
 
   @media (max-width: 540px) { /* Mobile-Specific Styles */
     .nav {
@@ -223,228 +293,3 @@
       margin: 0 15px;
     }
   }
-
-  @media (min-width: 1200px) { /* Desktop */
-    .header {
-      padding: 20px 40px;
-    }
-
-    .nav ul li {
-      margin: 0 20px;
-    }
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// .header {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   background-color: #00695c;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   padding: 10px 20px;
-
-//   .logo {
-//     font-size: 24px;
-//     font-weight: bold;
-//     color: white;
-//   }
-
-//   .logo_img {
-//     width: 70px;
-//     height: 70px;
-//     border-radius: 50%;
-//     margin-left: 1vw;
-//   }
-
-//   .nav {
-//     ul {
-//       display: flex;
-//       list-style: none;
-//       margin: 0;
-//       padding: 0;
-
-//       li {
-//         margin: 0 15px;
-//         cursor: pointer;
-
-//         a {
-//           text-decoration: none;
-//           color: white;
-//           &:hover {
-//             text-decoration: underline;
-//           }
-//         }
-//       }
-
-//       .bookButton {
-//         background: lightslategray;
-//         color: #fff;
-//         padding: 10px 20px;
-//         border-radius: 5px;
-//         &:hover {
-//           background: lightslategray;
-//         }
-//       }
-//     }
-//   }
-
-//   .nav-toggle {
-//     display: none;
-//     flex-direction: column;
-//     cursor: pointer;
-
-//     .bar {
-//       width: 25px;
-//       height: 3px;
-//       background-color: white;
-//       margin: 4px 0;
-//       transition: 0.4s;
-//     }
-
-//     &.open .bar:nth-child(1) {
-//       transform: rotate(-45deg) translate(-5px, 5px);
-//     }
-
-//     &.open .bar:nth-child(2) {
-//       opacity: 0;
-//     }
-
-//     &.open .bar:nth-child(3) {
-//       transform: rotate(45deg) translate(-5px, -5px);
-//     }
-//   }
-
-//   @media (max-width: 767px) { /* Mobile */
-//     .nav {
-//       position: absolute;
-//       top: 60px;
-//       right: 0;
-//       background-color: #00695c;
-//       width: 100%;
-//       max-height: 0;
-//       overflow: hidden;
-//       transition: max-height 0.3s ease-in-out;
-
-//       &.open {
-//         max-height: 300px;
-//       }
-
-//       ul {
-//         flex-direction: column;
-//         align-items: center;
-
-//         li {
-//           margin: 10px 0;
-//         }
-
-//         .bookButton {
-//           width: 80%;
-//           text-align: center;
-//         }
-//       }
-//     }
-
-//     .nav-toggle {
-//       display: flex;
-//     }
-
-//     .logo {
-//       margin-right: auto;
-//     }
-//   }
-
-//   @media (max-width: 425px) { /* Mobile-Specific Styles */
-//     .logo {
-//       font-size: 18px;
-//     }
-
-//     .logo_img {
-//       width: 50px;
-//       height: 50px;
-//     }
-//   }
-
-//   @media (max-width: 375px) { /* Small Mobile */
-//     .logo {
-//       font-size: 16px;
-//     }
-
-//     .logo_img {
-//       width: 40px;
-//       height: 40px;
-//     }
-//   }
-
-//   @media (max-width: 320px) { /* Extra Small Mobile */
-//     .logo {
-//       font-size: 14px;
-//     }
-
-//     .logo_img {
-//       width: 35px;
-//       height: 35px;
-//     }
-//   }
-
-//   @media (min-width: 768px) and (max-width: 991px) { /* Tablet */
-//     .nav {
-//       ul {
-//         flex-direction: row;
-
-//         li {
-//           margin: 10px 20px;
-//         }
-
-//         .bookButton {
-//           width: auto;
-//         }
-//       }
-//     }
-//   }
-
-//   @media (min-width: 992px) and (max-width: 1199px) { /* Laptop */
-//     .header {
-//       padding: 14px 30px;
-//     }
-
-//     .nav ul li {
-//       margin: 0 15px;
-//     }
-//   }
-
-//   @media (min-width: 1200px) { /* Desktop */
-//     .header {
-//       padding: 20px 40px;
-//     }
-
-//     .nav ul li {
-//       margin: 0 20px;
-//     }
-//   }
-// }
-

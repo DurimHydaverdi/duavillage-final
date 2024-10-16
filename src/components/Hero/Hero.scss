@@ -9,15 +9,33 @@
   text-align: center;
   position: relative;
 
-  .background {
+  .image-wrapper {
     position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
     height: 60vw;
+    overflow: hidden;
     z-index: -1;
+  }
+
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    margin-top: -200px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+
+  .fade-in {
+    opacity: 1;
+  }
+
+  .fade-out {
+    opacity: 0;
   }
 
   .heroText {
@@ -26,15 +44,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-
-    h1 {
-      font-size: 3em;
-    }
-
-    p {
-      font-size: 1.5em;
-    }
   }
+
 
   @media (max-width: 1281px) { /* Mobile */
     height: 400px;
@@ -119,15 +130,19 @@
       margin-top: 90px;
     }
 
+    .image-wrapper {
+      height: 1050px;
+      margin-top: -115px;
+    }
+
     .heroText {
       margin-top: -60px;
-      h1 {
-        font-size: 2.5em;
-      }
+    }
 
-      p {
-        font-size: 1.2em;
-      }
+    .white-logo {
+      width: 250px;
+      height: 250px;
+      margin-top: 550px;
     }
   }
 

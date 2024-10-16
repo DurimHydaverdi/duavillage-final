@@ -1,0 +1,12 @@
+.whatsapp-contact {
+    position: fixed;
+    bottom: 20px;  // Adjust position as needed
+    right: 20px;   // Adjust position as needed
+    z-index: 100;  // Ensure it appears above other elements
+  
+    img {
+      width: 80px; // Adjust the size of the logo
+      height: auto;
+    }
+  }
+  

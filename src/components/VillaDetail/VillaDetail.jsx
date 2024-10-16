@@ -6,17 +6,19 @@ import Header from '../Header/Header';
 import VillasData from '../Villas/VillasData';
 import ImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
-import p1 from '../Assets/p1.jpg';
 import { FaWifi, FaParking, FaShower, FaTv } from 'react-icons/fa';
 import { MdBalcony, MdOutlineBathroom, MdOutlineBedroomParent, MdOutlineLiving } from 'react-icons/md';
 import { FaKitchenSet } from 'react-icons/fa6';
 import { GiWashingMachine } from 'react-icons/gi';
 import { BsBadgeWcFill } from 'react-icons/bs';
+import { useTranslation } from 'react-i18next';
+import p3 from '../Assets/p3.jpg'
 
 const VillaDetail = () => {
   const { id } = useParams();
   const location = useLocation();
   const villa = location.state || VillasData.find(v => v.id === parseInt(id));
+  const { t } = useTranslation();
 
   // Filter out duplicate images
   const uniqueImageUrls = Array.from(new Set(villa.images));
@@ -35,14 +37,11 @@ const VillaDetail = () => {
   return (
     <div>
       <Header />
+      <img className='background' src={p3} alt='background' />
+      <h1 className="h1-v">{t('villas.bookNow')}</h1>
       <div className="villa-detail">
         <div className="villa-header">
           <h1>{villa.title}</h1>
-          {/* <div className="rating">
-            <span className="rating-score">9.2</span>
-            <span className="rating-text">Wonderful</span>
-            <span className="reviews">(36 reviews)</span>
-          </div> */}
         </div>
         <div className="villa-gallery">
           <ImageGallery
@@ -54,35 +53,35 @@ const VillaDetail = () => {
         <div className="villa-content">
           <div className="villa-info">
             <div className="villa-description">
-              <p>{villa.description}</p>
+              <p dangerouslySetInnerHTML={{ __html: t(villa.descriptionKey) }} /> {/* Render HTML */}
             </div>
             <div className="villa-amenities">
-              <div className="amenity"><FaWifi className='desp-icon' /><span>Free Wifi</span></div>
-              <div className="amenity"><FaParking className='desp-icon' /><span>Free on-site parking</span></div>
-              <div className="amenity"><MdBalcony className='desp-icon' /><span>Balcony</span></div>
-              <div className="amenity"><MdOutlineBathroom className='desp-icon' /><span>Private Bathroom</span></div>
-              <div className="amenity"><FaTv className='desp-icon' /><span>50 - Inch Tv</span></div>
-              <div className="amenity"><MdOutlineBedroomParent className='desp-icon' /><span>Rooms</span></div>
-              <div className="amenity"><FaShower className='desp-icon' /><span>Shower</span></div>
-              <div className="amenity"><FaKitchenSet className='desp-icon' /><span>Kitchen</span></div>
-              <div className="amenity"><GiWashingMachine className='desp-icon' /><span>Washing machine</span></div>
-              <div className="amenity"><MdOutlineLiving className='desp-icon' /><span>Living room</span></div>
-              <div className="amenity"><BsBadgeWcFill className='desp-icon' /><span>Toilets</span></div>
+              {/* Amenities icons */}
+              <div className="amenity"><FaWifi className='desp-icon' /><span>{t('villaDetail.freeWifi')}</span></div>
+              <div className="amenity"><FaParking className='desp-icon' /><span>{t('villaDetail.freeParking')}</span></div>
+              <div className="amenity"><MdBalcony className='desp-icon' /><span>{t('villaDetail.balcony')}</span></div>
+              <div className="amenity"><MdOutlineBathroom className='desp-icon' /><span>{t('villaDetail.privateBathroom')}</span></div>
+              <div className="amenity"><FaTv className='desp-icon' /><span>{t('villaDetail.tv50Inch')}</span></div>
+              <div className="amenity"><MdOutlineBedroomParent className='desp-icon' /><span>{t('villaDetail.rooms')}</span></div>
+              <div className="amenity"><FaShower className='desp-icon' /><span>{t('villaDetail.shower')}</span></div>
+              <div className="amenity"><FaKitchenSet className='desp-icon' /><span>{t('villaDetail.kitchen')}</span></div>
+              <div className="amenity"><GiWashingMachine className='desp-icon' /><span>{t('villaDetail.washingMachine')}</span></div>
+              <div className="amenity"><MdOutlineLiving className='desp-icon' /><span>{t('villaDetail.livingRoom')}</span></div>
+              <div className="amenity"><BsBadgeWcFill className='desp-icon' /><span>{t('villaDetail.toilets')}</span></div>
             </div>
           </div>
           <div className="property-summary">
             <div className="property-details">
-              <p>Prishtinë, Keçekollë - Dua Village</p>
+              <p>{t('villaDetail.location')}</p>
               <div className="details-container">
                 <div className="detail-items">
-                  <div className="detail-item"><span>Contact us in whatsapp</span></div>
+                  <div className="detail-item"><span>{t('villaDetail.contactUsWhatsApp')}</span></div>
                 </div>
               </div>
             </div>
             <div className="villas-info">
-              {/* <img src={p1} alt="Villas" className="villas-photo" /> */}
               <div className="villas-details">
-                <button onClick={handleContact} className="contact">Contact</button>
+                <button onClick={handleContact} className="contact">{t('villaDetail.contact')}</button>
               </div>
             </div>
           </div>
